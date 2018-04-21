@@ -1,22 +1,18 @@
 #pragma once
-#include "Component.h"
 #include "SDL.h"
 
-class GraphicsComponent : public Component
+class GraphicsComponent
 {
+protected:
+	SDL_Texture* tex;
+	SDL_Rect* size;
+
+	virtual void onUpdate(SDL_Renderer* renderer) = 0;
+	virtual void onCleanup() = 0;
+
 public:
-
-	SDL_Surface tex;
-	SDL_Rect size;
-
-	void update(SDL_Renderer* renderer)
-	{
-
-	}
-
+	void update(SDL_Renderer* renderer);
 	void cleanup();
-
-	GraphicsComponent();
 	~GraphicsComponent();
 };
 

@@ -34,11 +34,7 @@ bool App::startup()
 // THIS IS THE LOAD FUNCTION IT LOADS SHIT  *BLOWS MIND*
 void App::Load() {
 	//LOAD RESOURCES HERE
-
-	nene_tex = Graphics::LoadTexture(renderer, "button.bmp");
-	if (!nene_tex) {
-		SDL_GetError();
-	}
+	neneTex = new NeneComponent(renderer);
 
 }
 
@@ -89,9 +85,7 @@ void App::Render()
 {
 	SDL_RenderClear(renderer);
 	//	CLEAR SCREEN AND RENDER STUFF DOWN HERE
-
-	SDL_RenderCopy(renderer, nene_tex, NULL, NULL);
-
+	neneTex->update(renderer);
 	//STOP RENDERING SUTFF HERE	
 	SDL_RenderPresent(renderer);
 	SDL_Delay(1 / 60);
@@ -111,14 +105,11 @@ void App::run()
 
 void App::cleanup()
 {
-
-
 	SDL_FreeSurface(screenSurface);
 	screenSurface = nullptr;
 
 	SDL_DestroyWindow(window);
 	window = nullptr;
-
 
 	SDL_DestroyRenderer(renderer);
 	renderer = nullptr;
@@ -126,9 +117,7 @@ void App::cleanup()
 	SDL_FreeSurface(nene);
 	nene = nullptr;
 
-	SDL_DestroyTexture(nene_tex);
-	nene_tex = nullptr;
-
+	delete neneTex;
 
 	SDL_Quit();
 }

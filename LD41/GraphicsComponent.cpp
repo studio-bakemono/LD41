@@ -1,16 +1,13 @@
 #include "GraphicsComponent.h"
 
-
-GraphicsComponent::GraphicsComponent()
+void GraphicsComponent::update(SDL_Renderer* renderer)
 {
+	onUpdate(renderer);
 }
-
-
-
 
 void GraphicsComponent::cleanup()
 {
-	SDL_FreeSurface(&tex);
+	SDL_DestroyTexture(tex);
 }
 
 GraphicsComponent::~GraphicsComponent()
