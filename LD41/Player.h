@@ -7,12 +7,12 @@ class Player
 {
 public:
 
-	SDL_Renderer* renderer = nullptr;
+	SDL_Renderer * renderer = nullptr;
 	SDL_Rect rect;
 
 
 	void load() {
-		
+
 	}
 
 	void update() {

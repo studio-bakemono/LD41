@@ -26,8 +26,8 @@ struct TextureManager
 
 
 	SDL_Renderer* _renderer;
-	
-	
+
+
 	void load() {
 		/*
 		atlas_locations.insert(
@@ -42,7 +42,7 @@ struct TextureManager
 
 	void convert_to_textures() {
 		for (auto s : surfaces) {
-			textures.push_back( SDL_CreateTextureFromSurface(_renderer, s) );
+			textures.push_back(SDL_CreateTextureFromSurface(_renderer, s));
 		}
 	}
 

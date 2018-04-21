@@ -18,13 +18,13 @@ public:
 
 	SDL_Surface* nene = nullptr;
 	SDL_Texture* nene_tex = nullptr;
-	
+
 	//Event handler
 	SDL_Event e;
-	
+
 	bool running;
 
-	const int WINDOW_WIDTH =  800;
+	const int WINDOW_WIDTH = 800;
 	const int WINDOW_HEIGHT = 600;
 
 	const int FRAMERATE = 60;

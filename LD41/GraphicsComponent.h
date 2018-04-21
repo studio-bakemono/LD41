@@ -9,11 +9,11 @@ public:
 	SDL_Surface tex;
 	SDL_Rect size;
 
-	void update(SDL_Renderer* renderer) 
+	void update(SDL_Renderer* renderer)
 	{
-		
+
 	}
-	
+
 	void cleanup();
 
 	GraphicsComponent();

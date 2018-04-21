@@ -3,6 +3,6 @@
 
 struct ass {
 
- const int x = 2;
+	const int x = 2;
 
 };
