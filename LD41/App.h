@@ -3,6 +3,7 @@
 #include "EntityManager.h"
 #include "Entity.h"
 #include <string>
+#include "NeneComponent.h"
 
 //#include "TextureManager.h"
 
@@ -17,7 +18,7 @@ public:
 	SDL_Renderer* renderer = nullptr;
 
 	SDL_Surface* nene = nullptr;
-	SDL_Texture* nene_tex = nullptr;
+	NeneComponent* neneTex = nullptr;
 
 	//Event handler
 	SDL_Event e;
