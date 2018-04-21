@@ -129,6 +129,7 @@
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GraphicsComponent.cpp" />
     <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="InputComponent.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NeneComponent.cpp" />
@@ -144,6 +145,7 @@
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsComponent.h" />
     <ClInclude Include="GUI.h" />
+    <ClInclude Include="InputComponent.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="NeneComponent.h" />

@@ -4,6 +4,7 @@
 #include "Entity.h"
 #include <string>
 #include "NeneComponent.h"
+#include "InputComponent.h"
 
 //#include "TextureManager.h"
 
@@ -19,6 +20,7 @@ public:
 
 	SDL_Surface* nene = nullptr;
 	NeneComponent* neneTex = nullptr;
+	InputComponent* input = nullptr;
 
 	//Event handler
 	SDL_Event e;
