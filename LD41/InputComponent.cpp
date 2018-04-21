@@ -1,5 +1,6 @@
 #include "InputComponent.h"
 #include "App.h"
+#include <algorithm>
 
 InputComponent::InputComponent()
 {
@@ -11,10 +12,13 @@ InputComponent::~InputComponent()
 
 }
 
+void InputComponent::notifyObservers()
+{
+}
+
 void InputComponent::onUpdate(App* game)
 {
 	SDL_Event e = game->e;
-	//SDL_GetMouseState(&mouse_position.x, &mouse_position.y);
 	while (SDL_PollEvent(&e) != 0)
 	{
 		switch (e.type)
@@ -26,9 +30,7 @@ void InputComponent::onUpdate(App* game)
 
 		case SDL_KEYDOWN:
 			printf("KEYBOARD INPUT FROM KEY: %d \n", e.key.keysym.sym);
-
 			break;
-
 
 		case SDL_MOUSEBUTTONDOWN:
 			printf("MOUSE INPUT FROM KEY: %d \n", e.button.button);
@@ -38,9 +40,7 @@ void InputComponent::onUpdate(App* game)
 			break;
 
 		case SDL_QUIT:
-
 			game->running = false;
-
 			break;
 		}
 	}
@@ -48,5 +48,20 @@ void InputComponent::onUpdate(App* game)
 
 void InputComponent::onCleanup()
 {
+	delete observers;
+}
 
+void InputComponent::addObserver(InputComponentObserver* observer)
+{
+	observers->push_back(observer);
+}
+
+void InputComponent::removeObserver(InputComponentObserver* observer)
+{
+	observers->erase(std::remove(observers->begin(), observers->end(), observer), observers->end());
+}
+
+bool InputData::hasQuit()
+{
+	return quit;
 }
