@@ -35,46 +35,13 @@ bool App::startup()
 void App::Load() {
 	//LOAD RESOURCES HERE
 	neneTex = new NeneComponent(renderer);
-
+	input = new InputComponent();
 }
 
 void App::Update()
 {
-
-
-	//SDL_GetMouseState(&mouse_position.x, &mouse_position.y);
-	while (SDL_PollEvent(&e) != 0)
-	{
-		switch (e.type)
-		{
-		case SDL_MOUSEMOTION:
-			printf("THERE IS MOUSE MOTION\n mouse position: (%d, %d)\n",
-				e.motion.x, e.motion.y);
-			break;
-
-		case SDL_KEYDOWN:
-			printf("KEYBOARD INPUT FROM KEY: %d \n", e.key.keysym.sym);
-
-			break;
-
-
-		case SDL_MOUSEBUTTONDOWN:
-			printf("MOUSE INPUT FROM KEY: %d \n", e.button.button);
-			break;
-
-		case SDL_MOUSEBUTTONUP:
-			break;
-
-		case SDL_QUIT:
-
-			running = false;
-
-			break;
-		}
-
-		SDL_Delay(1 / FRAMERATE);
-	}
-
+	input->update(this);
+	SDL_Delay(1 / FRAMERATE);
 	Render();
 
 }
@@ -85,7 +52,7 @@ void App::Render()
 {
 	SDL_RenderClear(renderer);
 	//	CLEAR SCREEN AND RENDER STUFF DOWN HERE
-	neneTex->update(renderer);
+	neneTex->update(this);
 	//STOP RENDERING SUTFF HERE	
 	SDL_RenderPresent(renderer);
 	SDL_Delay(1 / 60);
@@ -118,6 +85,7 @@ void App::cleanup()
 	nene = nullptr;
 
 	delete neneTex;
+	delete input;
 
 	SDL_Quit();
 }

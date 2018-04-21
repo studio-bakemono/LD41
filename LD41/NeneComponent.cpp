@@ -1,4 +1,5 @@
 #include "NeneComponent.h"
+#include "App.h"
 
 NeneComponent::NeneComponent(SDL_Renderer* renderer)
 {
@@ -13,9 +14,9 @@ NeneComponent::~NeneComponent()
 	cleanup();
 }
 
-void NeneComponent::onUpdate(SDL_Renderer* renderer)
+void NeneComponent::onUpdate(App* game)
 {
-	SDL_RenderCopy(renderer, tex, NULL, NULL);
+	SDL_RenderCopy(game->renderer, tex, NULL, NULL);
 }
 
 void NeneComponent::onCleanup()

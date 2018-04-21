@@ -4,8 +4,13 @@
 #include <vector>
 #include "SDL.h"
 
+class App;
+
 class Component
 {
+protected:
+	virtual void onUpdate(App* game) = 0;
+	virtual void onCleanup() = 0;
 public:
 
 	enum ComponentType {
@@ -16,10 +21,7 @@ public:
 	};
 
 	Component();
-
-	virtual void update() = 0;
-	virtual void cleanup() = 0;
-
+	void update(App* game);
+	void cleanup();
 	~Component();
 };
-
