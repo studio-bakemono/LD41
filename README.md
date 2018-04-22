@@ -1,12 +1,6 @@
-# Stealth Programming LDJAM
-## Two Modes
-- Individual Level Solve (Score: Script Tokens, Instruction Callcount, Time)
-- Jack-of-all-levels
-## Scripting
-Code is memory.
+# Programming Rhythm Game
+## Turing Machine
 ### Instructions
-0x00 is Current Instruction
-
 Each instruction is one case-insensitive byte,
 followed by two bytes
 ```
@@ -17,5 +11,14 @@ followed by two bytes
 & *arg1=arg2
 . *arg1=arg1+arg2
 ```
+
+### Special Addresses
+Only 9 of them:
+0 is Current Instruction
+1 through 8 are the beats, 0=silence, anything else=hit!
 ### Editing Code
-A dual view, shows 
+Four Columns:
+* Address
+* Val as Instruction
+* Val as Uint
+* Any info about address (is it special?)
