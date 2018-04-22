@@ -1,11 +1,13 @@
 #pragma once
-#include <SDL.h>
+
 #include "EntityManager.h"
 #include "Entity.h"
 #include <string>
 #include "NeneComponent.h"
 #include "InputComponent.h"
 #include "SoundsComponent.h"
+#include "TuringComponent.h"
+#include "BytePanelComponent.h"
 
 //#include "TextureManager.h"
 
@@ -24,6 +26,8 @@ public:
 	NeneComponent* neneTex = nullptr;
 	InputComponent* input = nullptr;
 	SoundsComponent* sounds = nullptr;
+	TuringComponent* turing = nullptr;
+	BytePanelComponent* bytePanel = nullptr;
 
 	//Event handler
 	SDL_Event e;

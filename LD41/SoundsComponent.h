@@ -1,11 +1,14 @@
 #pragma once
 #include "Component.h"
 #include <SDL_mixer.h>
-#include "Turing.h"
+#include "TuringComponent.h"
 
 class SoundsComponent :
-	public Component
+	public Component,
+	public TuringComponentObserver
 {
+protected:
+	void onTuringComponentUpdated(TuringComponentInputData data);
 private:
 	Mix_Chunk * chunk1;
 	Mix_Chunk * chunk2;
@@ -15,8 +18,6 @@ private:
 	Mix_Chunk * chunk6;
 	Mix_Chunk * chunk7;
 	Mix_Chunk * chunk8;
-	Turing machine;
-	int nextbeat = BEATCOUNT;
 	void playSound(int b);
 protected:
 	void onUpdate(App* game);

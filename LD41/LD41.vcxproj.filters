@@ -87,6 +87,15 @@
     <ClCompile Include="Turing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BitButtonComponent.cpp">
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="TuringComponent.cpp">
+      <Filter>Source Files\components</Filter>
+    </ClCompile>
+    <ClCompile Include="BytePanelComponent.cpp">
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -148,6 +157,15 @@
     </ClInclude>
     <ClInclude Include="Turing.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BitButtonComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="TuringComponent.h">
+      <Filter>Header Files\components</Filter>
+    </ClInclude>
+    <ClInclude Include="BytePanelComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
