@@ -1,15 +1,19 @@
 # Programming Rhythm Game
 ## Turing Machine
+An array of 256 bytes
 ### Instructions
 Each instruction is one case-insensitive byte,
 followed by two bytes
 ```
-  Space is NOP
 + *arg1=*arg1+*arg2
 - *arg1=*arg1-*arg2
-= *arg1=*arg2
-& *arg1=arg2
-. *arg1=arg1+arg2
+* *arg1=*arg1*(*arg2)
+/ *arg1=*arg1/*arg2
+% *arg1=*arg1%*arg2
+c *arg1=*arg2
+= *arg1=arg2
+z if !*arg1, *0+=arg2
+Else, NOP
 ```
 
 ### Special Addresses

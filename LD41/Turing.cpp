@@ -19,24 +19,24 @@ BS Turing::tick()
 				tape[tape[tape[0]+1]]-=tape[tape[tape[0]+2]];
 				break;
 			}
-            case '%':{
-				tape[tape[tape[0]+1]]%=tape[tape[tape[0]+2]];
+            case '*':{
+				tape[tape[tape[0]+1]]*=tape[tape[tape[0]+2]];
 				break;
 			}
             case '/':{
 				tape[tape[tape[0]+1]]/=tape[tape[tape[0]+2]];
 				break;
 			}
-            case '*':{
-				tape[tape[tape[0]+1]]*=tape[tape[tape[0]+2]];
-				break;
-			}
-			case '=':{
-				tape[tape[tape[0]+1]]=tape[tape[0]+2];
+            case '%':{
+				tape[tape[tape[0]+1]]%=tape[tape[tape[0]+2]];
 				break;
 			}
 			case 'c':{
 				tape[tape[tape[0]+1]]=tape[tape[tape[0]+2]];
+				break;
+			}
+			case '=':{
+				tape[tape[tape[0]+1]]=tape[tape[0]+2];
 				break;
 			}
 			case 'z':{
@@ -46,9 +46,7 @@ BS Turing::tick()
 				break;
 			}
 		}
-		if(tape[0]!=0){
-			tape[0]+=3;
-		}
+		tape[0]+=3;
 	}
     BS set;
     for(char x=0;x<BEATCOUNT;x++){
