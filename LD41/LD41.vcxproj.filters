@@ -31,6 +31,12 @@
     <Filter Include="Header Files\components\input">
       <UniqueIdentifier>{a5a53616-10c3-4799-aaf2-40a2cb12df50}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\components\sounds">
+      <UniqueIdentifier>{142b728a-f3d8-4d24-94ad-7cd943544466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\components\sounds">
+      <UniqueIdentifier>{4b246caf-1fed-4355-a9c7-981189d9dd3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp">
@@ -71,6 +77,15 @@
     </ClCompile>
     <ClCompile Include="GraphicsComponent.cpp">
       <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="SoundsComponent.cpp">
+      <Filter>Source Files\components\sounds</Filter>
+    </ClCompile>
+    <ClCompile Include="Sounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Turing.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -125,8 +140,20 @@
     <ClInclude Include="GraphicsComponent.h">
       <Filter>Header Files\components\graphics</Filter>
     </ClInclude>
+    <ClInclude Include="SoundsComponent.h">
+      <Filter>Header Files\components\sounds</Filter>
+    </ClInclude>
+    <ClInclude Include="Sounds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Turing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL2_mixer.lib" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,7 @@
 // Turing.h : A Turing Machine that beat boxes
 //
 #include <bitset>
+#include <vector>
 
 class Turing{
     std::vector<unsigned char> tape = {
@@ -15,4 +16,4 @@ class Turing{
     public:
     Turing();
     std::bitset<8> tick();
-}
+};
