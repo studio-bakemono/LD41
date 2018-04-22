@@ -3,18 +3,32 @@
 
 #include "Turing.h"
 
-#include <bitset>
-
-Turing::Turing(){
+Turing::Turing(std::vector<unsigned char> tape) : tape(tape){
     tape.resize(256);
 }
 
-std::bitset<8> Turing::tick()
+BS Turing::tick()
 {
-	for(int iter=0; iter<16; iter++){
+	for(int iter=0; iter<STEPSPERTICK; iter++){
 		switch(tape[tape[0]]){
 			case '+':{
 				tape[tape[tape[0]+1]]+=tape[tape[tape[0]+2]];
+				break;
+			}
+			case '-':{
+				tape[tape[tape[0]+1]]-=tape[tape[tape[0]+2]];
+				break;
+			}
+            case '%':{
+				tape[tape[tape[0]+1]]%=tape[tape[tape[0]+2]];
+				break;
+			}
+            case '/':{
+				tape[tape[tape[0]+1]]/=tape[tape[tape[0]+2]];
+				break;
+			}
+            case '*':{
+				tape[tape[tape[0]+1]]*=tape[tape[tape[0]+2]];
 				break;
 			}
 			case '=':{
@@ -36,8 +50,8 @@ std::bitset<8> Turing::tick()
 			tape[0]+=3;
 		}
 	}
-    std::bitset<8> set;
-    for(char x=0;x<8;x++){
+    BS set;
+    for(char x=0;x<BEATCOUNT;x++){
         set.set(x,tape[x+1]);
     }
 	return set;

@@ -13,7 +13,7 @@ followed by two bytes
 ```
 
 ### Special Addresses
-Only 9 of them:
+9 of them:
 0 is Current Instruction
 1 through 8 are the beats, 0=silence, anything else=hit!
 ### Editing Code
