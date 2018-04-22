@@ -70,8 +70,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>..\packages\sdl2.v140.2.0.4\build\native\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>..\packages\sdl2_mixer.2.0.0\content;..\packages\sdl2.v140.2.0.4\build\native\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\packages\sdl2_mixer.2.0.0\content;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -134,7 +134,10 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NeneComponent.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Sounds.cpp" />
+    <ClCompile Include="SoundsComponent.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Turing.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="App.h" />
@@ -150,13 +153,19 @@
     <ClInclude Include="Map.h" />
     <ClInclude Include="NeneComponent.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Sounds.h" />
+    <ClInclude Include="SoundsComponent.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="textureHelper.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Turing.h" />
     <ClInclude Include="vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="SDL2_mixer.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
