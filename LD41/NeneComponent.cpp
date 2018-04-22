@@ -3,7 +3,7 @@
 
 NeneComponent::NeneComponent(SDL_Renderer* renderer)
 {
-	tex = Graphics::LoadTexture(renderer, "../resources/button.bmp");
+	tex = Graphics::LoadTexture(renderer, "button.bmp");
 	if (!tex) {
 		SDL_GetError();
 	}
