@@ -24,7 +24,7 @@ protected:
 	void onCleanup();
 	void onTuringComponentUpdated(TuringComponentInputData data);
 public:
-	BytePanelComponent(SDL_Renderer* renderer);
+	BytePanelComponent(SDL_Renderer* renderer, int panelsize, int posx, int posy, int alphaOff);
 	~BytePanelComponent();
 };
 

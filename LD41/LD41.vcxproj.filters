@@ -96,6 +96,12 @@
     <ClCompile Include="BytePanelComponent.cpp">
       <Filter>Source Files\components\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="BeatmapViewerComponent.cpp">
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="OperatorButtonComponent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h">
@@ -165,6 +171,12 @@
       <Filter>Header Files\components</Filter>
     </ClInclude>
     <ClInclude Include="BytePanelComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="BeatmapViewerComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="OperatorButtonComponent.h">
       <Filter>Header Files\components\graphics</Filter>
     </ClInclude>
   </ItemGroup>

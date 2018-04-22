@@ -3,12 +3,13 @@
 
 NeneComponent::NeneComponent(SDL_Renderer* renderer)
 {
-	tex = Graphics::LoadTexture(renderer, "button.bmp");
+	tex = Graphics::LoadTexture(renderer, "test.bmp");
 	if (!tex) {
 		SDL_GetError();
 	}
 
 }
+
 NeneComponent::~NeneComponent()
 {
 	cleanup();
