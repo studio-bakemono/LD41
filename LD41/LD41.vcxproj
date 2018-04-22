@@ -135,7 +135,9 @@
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NeneComponent.cpp" />
+    <ClCompile Include="OperatorButtonComponent.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="BeatmapViewerComponent.cpp" />
     <ClCompile Include="Sounds.cpp" />
     <ClCompile Include="SoundsComponent.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -157,7 +159,9 @@
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="NeneComponent.h" />
+    <ClInclude Include="OperatorButtonComponent.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="BeatmapViewerComponent.h" />
     <ClInclude Include="Sounds.h" />
     <ClInclude Include="SoundsComponent.h" />
     <ClInclude Include="test.h" />

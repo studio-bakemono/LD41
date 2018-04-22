@@ -8,6 +8,7 @@
 #include "SoundsComponent.h"
 #include "TuringComponent.h"
 #include "BytePanelComponent.h"
+#include "BeatmapViewerComponent.h"
 
 //#include "TextureManager.h"
 
@@ -28,6 +29,8 @@ public:
 	SoundsComponent* sounds = nullptr;
 	TuringComponent* turing = nullptr;
 	BytePanelComponent* bytePanel = nullptr;
+	BeatmapViewerComponent* programOutput = nullptr;
+	BeatmapViewerComponent* patternOutput = nullptr;
 
 	//Event handler
 	SDL_Event e;

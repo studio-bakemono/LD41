@@ -42,8 +42,9 @@ void App::Load() {
 	neneTex = new NeneComponent(renderer);
 
 	sounds = new SoundsComponent();
-	bytePanel = new BytePanelComponent(renderer);
-
+	bytePanel = new BytePanelComponent(renderer, 640, 0, 16, 200);
+	programOutput = new BeatmapViewerComponent(renderer, 16, 100, 16);
+	patternOutput = new BeatmapViewerComponent(renderer, 192, 100, 16);
 	turing = new TuringComponent();
 	turing->addObserver(bytePanel);
 	turing->addObserver(sounds);
@@ -70,6 +71,21 @@ void App::Render()
 	//	CLEAR SCREEN AND RENDER STUFF DOWN HERE
 	neneTex->update(this);
 	bytePanel->update(this);
+
+	SDL_SetRenderDrawColor(renderer, 0x00, 0x00, 0x00, 0xD0);
+	SDL_SetRenderDrawBlendMode(renderer, SDL_BLENDMODE_BLEND);
+
+	SDL_Rect programOutputRect = { 16, 90, 164, 482 };
+	SDL_RenderFillRect(renderer, &programOutputRect);
+
+	SDL_Rect patternOutputRect = { 192, 90, 164, 482 };
+	SDL_RenderFillRect(renderer, &patternOutputRect);
+
+	SDL_Rect programEditorRect = { 368, 90, 420, 482 };
+	SDL_RenderFillRect(renderer, &programEditorRect);
+
+	programOutput->update(this);
+	patternOutput->update(this);
 	//STOP RENDERING SUTFF HERE	
 	SDL_RenderPresent(renderer);
 	SDL_Delay(1000 / 60);

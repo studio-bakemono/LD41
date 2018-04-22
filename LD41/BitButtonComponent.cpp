@@ -21,17 +21,18 @@ void BitButtonComponent::flip(bool on)
 	}
 	else
 	{
-		SDL_SetTextureAlphaMod(tex, 127);
+		SDL_SetTextureAlphaMod(tex, 96);
 	}
 }
 
-BitButtonComponent::BitButtonComponent(std::string filename, SDL_Renderer * renderer, int position)
+BitButtonComponent::BitButtonComponent(std::string filename, SDL_Renderer * renderer, int startx, int starty, int size, int alphaOff)
 {
+	this->alphaOff = alphaOff;
 	this->size = new SDL_Rect();
-	this->size->h = 64;
-	this->size->w = 64;
-	this->size->x = position;
-	this->size->y = 32;
+	this->size->h = size;
+	this->size->w = size;
+	this->size->x = startx;
+	this->size->y = starty;
 
 	tex = Graphics::LoadTexture(renderer, filename);
 	if (!tex) {
