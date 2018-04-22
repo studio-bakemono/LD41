@@ -8,7 +8,7 @@ App::App()
 //					AYO, HOL UP! THIS THE STARTUP SHIEEEEET??!?
 bool App::startup()
 {
-	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO) < 0)
+	if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | IMG_INIT_PNG) < 0)
 	{
 		//	LogError();
 		return false;
@@ -39,8 +39,15 @@ bool App::startup()
 // THIS IS THE LOAD FUNCTION IT LOADS SHIT  *BLOWS MIND*
 void App::Load() {
 	//LOAD RESOURCES HERE
-	sounds = new SoundsComponent();
 	neneTex = new NeneComponent(renderer);
+
+	sounds = new SoundsComponent();
+	bytePanel = new BytePanelComponent(renderer);
+
+	turing = new TuringComponent();
+	turing->addObserver(bytePanel);
+	turing->addObserver(sounds);
+
 	input = new InputComponent();
 	input->addObserver(this);
 }
@@ -49,6 +56,7 @@ void App::Update()
 {
 	input->update(this);
 	sounds->update(this);
+	turing->update(this);
 	SDL_Delay(1 / FRAMERATE);
 	Render();
 
@@ -61,6 +69,7 @@ void App::Render()
 	SDL_RenderClear(renderer);
 	//	CLEAR SCREEN AND RENDER STUFF DOWN HERE
 	neneTex->update(this);
+	bytePanel->update(this);
 	//STOP RENDERING SUTFF HERE	
 	SDL_RenderPresent(renderer);
 	SDL_Delay(1000 / 60);

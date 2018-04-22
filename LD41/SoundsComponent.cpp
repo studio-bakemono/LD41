@@ -2,6 +2,15 @@
 #include "Sounds.h"
 
 
+void SoundsComponent::onTuringComponentUpdated(TuringComponentInputData data)
+{
+	for (int b = 0; b<BEATCOUNT; b++) {
+		if (data.bits[b]) {
+			playSound(b);
+		}
+	}
+}
+
 void SoundsComponent::playSound(int b)
 {
 	switch (b)
@@ -33,21 +42,7 @@ void SoundsComponent::playSound(int b)
 	}
 }
 
-void SoundsComponent::onUpdate(App * game)
-{
-	nextbeat -= 1;
-	if (nextbeat == 0) 
-	{
-		auto bs = machine.tick();
-		
-		nextbeat = BEATCOUNT;
-		for (int b = 0; b<BEATCOUNT; b++) {
-			if (bs[b]) {
-				playSound(b);
-			}
-		}
-	}
-}
+void SoundsComponent::onUpdate(App * game) {}
 
 void SoundsComponent::onCleanup()
 {
@@ -79,14 +74,6 @@ SoundsComponent::SoundsComponent()
 	chunk6 = Sounds::LoadSound("switch6.wav");
 	chunk7 = Sounds::LoadSound("switch7.wav");
 	chunk8 = Sounds::LoadSound("switch8.wav");
-
-	std::vector<unsigned char> t;
-	for (int i = 0; i < 256; i++)
-	{
-		t.push_back((char)rand() % 256);
-	}
-	machine = Turing(t);
-
 }
 
 SoundsComponent::~SoundsComponent()

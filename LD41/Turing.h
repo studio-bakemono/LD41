@@ -1,3 +1,4 @@
+#pragma once
 // Turing.h : A Turing Machine that beat boxes
 //
 #include <bitset>
@@ -6,7 +7,8 @@
 #define STEPSPERTICK 16
 #define BS std::bitset<BEATCOUNT>
 
-class Turing{
+class Turing
+{
     std::vector<unsigned char> tape;
     public:
     //Default tape

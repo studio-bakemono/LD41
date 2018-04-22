@@ -50,7 +50,14 @@ BS Turing::tick()
 	}
     BS set;
     for(char x=0;x<BEATCOUNT;x++){
-        set.set(x,tape[x+1]);
+		// Just to test
+		if (rand() % 3 == 0) {
+			set.set(x, 1);
+		}
+		else {
+			set.set(x, 0);
+		}
+        //set.set(x,tape[x+1]);
     }
 	return set;
 }
