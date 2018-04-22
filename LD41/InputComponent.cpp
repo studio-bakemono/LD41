@@ -12,13 +12,30 @@ InputComponent::~InputComponent()
 
 }
 
-void InputComponent::notifyObservers()
+void InputComponent::notifyObservers(InputData data)
 {
+	for (int i = 0; i < observers.size(); i++)
+	{
+		observers[i]->onInputComponentUpdated(data);
+	}
+}
+
+void InputComponent::addObserver(InputComponentObserver* observer)
+{
+	observers.push_back(observer);
+}
+
+void InputComponent::removeObserver(InputComponentObserver* observer)
+{
+	observers.erase(std::remove(observers.begin(), observers.end(), observer), observers.end());
 }
 
 void InputComponent::onUpdate(App* game)
 {
 	SDL_Event e = game->e;
+	bool changed = false;
+	InputData data;
+
 	while (SDL_PollEvent(&e) != 0)
 	{
 		switch (e.type)
@@ -40,28 +57,19 @@ void InputComponent::onUpdate(App* game)
 			break;
 
 		case SDL_QUIT:
-			game->running = false;
+			data.quit = true;
+			changed = true;
 			break;
 		}
+	}
+	if (changed)
+	{
+		notifyObservers(data);
 	}
 }
 
 void InputComponent::onCleanup()
 {
-	delete observers;
+
 }
 
-void InputComponent::addObserver(InputComponentObserver* observer)
-{
-	observers->push_back(observer);
-}
-
-void InputComponent::removeObserver(InputComponentObserver* observer)
-{
-	observers->erase(std::remove(observers->begin(), observers->end(), observer), observers->end());
-}
-
-bool InputData::hasQuit()
-{
-	return quit;
-}

@@ -10,10 +10,11 @@
 
 #include "Player.h"
 
-class App
+class App : public InputComponentObserver
 {
 public:
 
+	void onInputComponentUpdated(InputData data);
 	SDL_Window * window = nullptr;
 	SDL_Surface* screenSurface = nullptr;
 	SDL_Renderer* renderer = nullptr;

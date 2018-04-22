@@ -4,10 +4,8 @@
 
 class InputData
 {
-private:
-	bool quit = false;
 public:
-	bool hasQuit();
+	bool quit = false;
 };
 
 class InputComponentObserver
@@ -19,9 +17,8 @@ public:
 class InputComponent: public Component
 {
 private:
-	std::vector<class InputComponentObserver*>* observers;
-	InputData inputData;
-	void notifyObservers();
+	std::vector<class InputComponentObserver*> observers;
+	void notifyObservers(InputData data);
 protected:
 	void onUpdate(App* game);
 	void onCleanup();

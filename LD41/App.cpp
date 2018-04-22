@@ -30,12 +30,12 @@ bool App::startup()
 }
 
 
-
 // THIS IS THE LOAD FUNCTION IT LOADS SHIT  *BLOWS MIND*
 void App::Load() {
 	//LOAD RESOURCES HERE
 	neneTex = new NeneComponent(renderer);
 	input = new InputComponent();
+	input->addObserver(this);
 }
 
 void App::Update()
@@ -93,4 +93,12 @@ void App::cleanup()
 App::~App()
 {
 	cleanup();
+}
+
+void App::onInputComponentUpdated(InputData data)
+{
+	if (data.quit)
+	{
+		running = false;
+	}
 }
