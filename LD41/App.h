@@ -5,6 +5,7 @@
 #include <string>
 #include "NeneComponent.h"
 #include "InputComponent.h"
+#include "SoundsComponent.h"
 
 //#include "TextureManager.h"
 
@@ -22,6 +23,7 @@ public:
 	SDL_Surface* nene = nullptr;
 	NeneComponent* neneTex = nullptr;
 	InputComponent* input = nullptr;
+	SoundsComponent* sounds = nullptr;
 
 	//Event handler
 	SDL_Event e;

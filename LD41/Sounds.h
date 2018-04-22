@@ -6,7 +6,7 @@
 
 #define RESOURCES_PATH "../resources/"
 
-namespace Graphics {
+namespace Sounds {
 	Mix_Chunk* LoadSound(std::string fileName);
 }
 
