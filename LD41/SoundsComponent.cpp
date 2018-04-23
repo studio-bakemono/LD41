@@ -6,7 +6,7 @@ void SoundsComponent::onTuringComponentUpdated(TuringComponentInputData data)
 {
 	for (int b = 0; b<BEATCOUNT; b++) {
 		if (data.bits[b]) {
-			playSound(b);
+			//playSound(b);
 		}
 	}
 }

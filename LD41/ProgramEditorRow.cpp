@@ -13,11 +13,11 @@ void ProgramEditorRow::onUpdate(App * game)
 	}
 	if (value1->getValue() != game->tape.getValue(rowPosition * 3 + 1))
 	{
-		game->tape.changeAdress(rowPosition * 3 + 1, opButton->getValue());
+		game->tape.changeAdress(rowPosition * 3 + 1, value1->getValue());
 	}
 	if (value2->getValue() != game->tape.getValue(rowPosition * 3 + 2))
 	{
-		game->tape.changeAdress(rowPosition * 3 + 2, opButton->getValue());
+		game->tape.changeAdress(rowPosition * 3 + 2, value2->getValue());
 	}
 
 }

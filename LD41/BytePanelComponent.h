@@ -17,13 +17,13 @@ private:
 	BitButtonComponent* bit5 = nullptr;
 	BitButtonComponent* bit6 = nullptr;
 	BitButtonComponent* bit7 = nullptr;
-	std::vector<class BitButtonComponent*> bitButtons;
 
 protected:
 	void onUpdate(App* game);
 	void onCleanup();
 	void onTuringComponentUpdated(TuringComponentInputData data);
 public:
+	std::vector<class BitButtonComponent*> bitButtons;
 	BytePanelComponent(SDL_Renderer* renderer, int panelsize, int posx, int posy, int alphaOff);
 	~BytePanelComponent();
 };

@@ -21,7 +21,7 @@ void BitButtonComponent::flip(bool on)
 	}
 	else
 	{
-		SDL_SetTextureAlphaMod(tex, 96);
+		SDL_SetTextureAlphaMod(tex, alphaOff);
 	}
 }
 
