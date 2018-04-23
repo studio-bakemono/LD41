@@ -51,6 +51,10 @@ void InputComponent::onUpdate(App* game)
 
 		case SDL_MOUSEBUTTONDOWN:
 			printf("MOUSE INPUT FROM KEY: %d \n", e.button.button);
+			changed = true;
+			data.mouseClicked = true;
+			data.mouseX = e.button.x;
+			data.mouseY = e.button.y;
 			break;
 
 		case SDL_MOUSEBUTTONUP:
@@ -73,3 +77,7 @@ void InputComponent::onCleanup()
 
 }
 
+int in_rect(int x, int y, struct SDL_Rect *r) {
+	return (x >= r->x) && (y >= r->y) &&
+		(x < r->x + r->w) && (y < r->y + r->h);
+}

@@ -6,6 +6,9 @@ class InputData
 {
 public:
 	bool quit = false;
+	bool mouseClicked = false;
+	int mouseX = 0;
+	int mouseY = 0;
 };
 
 class InputComponentObserver
@@ -28,3 +31,5 @@ public:
 	InputComponent();
 	~InputComponent();
 };
+
+int in_rect(int x, int y, struct SDL_Rect *r);
