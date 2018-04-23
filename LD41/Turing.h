@@ -4,7 +4,7 @@
 #include <bitset>
 #include <vector>
 #define BEATCOUNT 8
-#define STEPSPERTICK 16
+#define STEPSPERTICK 1
 #define BS std::bitset<BEATCOUNT>
 
 class Turing

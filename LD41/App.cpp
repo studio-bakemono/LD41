@@ -50,16 +50,17 @@ void App::Load() {
 	programEditor = new ProgramEditor(renderer);
 	sounds = new SoundsComponent();
 	bytePanel = new BytePanelComponent(renderer, 640, 0, 16, 200);
-	programOutput = new BeatmapViewerComponent(renderer, 16, 100, 16);
+	programOutput = new ProgramBeatmapViewerComponent(renderer, 16, 100, 16);
 	patternOutput = new BeatmapViewerComponent(renderer, 192, 100, 16);
 	turing = new TuringComponent();
 	turing->addObserver(bytePanel);
 	turing->addObserver(sounds);
-
+	tape.addObserver(programOutput);
 	input = new InputComponent();
 	input->addObserver(this);
 	for (int i = 0; i < programEditor->rows.size(); i++) {
 		input->addObserver(programEditor->rows[i]);
+		tape.addObserver(programEditor->rows[i]);
 	}
 }
 

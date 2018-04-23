@@ -20,7 +20,7 @@ private:
 	SoundsComponent* sounds = nullptr;
 	TuringComponent* turing = nullptr;
 	BytePanelComponent* bytePanel = nullptr;
-	BeatmapViewerComponent* programOutput = nullptr;
+	ProgramBeatmapViewerComponent* programOutput = nullptr;
 	BeatmapViewerComponent* patternOutput = nullptr;
 	ProgramEditor* programEditor = nullptr;
 

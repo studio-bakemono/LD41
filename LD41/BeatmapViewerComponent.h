@@ -2,13 +2,13 @@
 #include "GraphicsComponent.h"
 #include "BytePanelComponent.h"
 #include <vector>
+#include "Tape.h"
 
 class BeatmapViewerComponent :
 	public GraphicsComponent
 {
-private:
-	std::vector<class BytePanelComponent*> bytePanels;
 protected:
+	std::vector<class BytePanelComponent*> bytePanels;
 	void onUpdate(App* game);
 	void onCleanup();
 
@@ -17,3 +17,13 @@ public:
 	~BeatmapViewerComponent();
 };
 
+class ProgramBeatmapViewerComponent :
+	public BeatmapViewerComponent,
+	public TapeObserver
+{
+public:
+	ProgramBeatmapViewerComponent(SDL_Renderer* renderer, int posx, int posy, int rows);
+
+	// Inherited via TapeObserver
+	virtual void onTapeUpdated(std::vector<unsigned char> tape) override;
+};
