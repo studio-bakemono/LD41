@@ -24,7 +24,7 @@ ProgramEditor::ProgramEditor(SDL_Renderer* renderer)
 
 	for (int i = 0; i < 12; i++)
 	{
-		rows.push_back(new ProgramEditorRow(renderer, arrowUp, arrowDown, font, 380, posy+=36));
+		rows.push_back(new ProgramEditorRow(renderer, arrowUp, arrowDown, font, 380, posy+=36, i));
 	}
 }
 

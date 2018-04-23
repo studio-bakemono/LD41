@@ -1,8 +1,6 @@
 #pragma once
 #include <SDL_ttf.h>
 
-#include "EntityManager.h"
-#include "Entity.h"
 #include <string>
 #include "NeneComponent.h"
 #include "InputComponent.h"
@@ -11,21 +9,12 @@
 #include "BytePanelComponent.h"
 #include "BeatmapViewerComponent.h"
 #include "ProgramEditor.h"
-
-//#include "TextureManager.h"
-
-#include "Player.h"
+#include "Tape.h"
 
 class App : public InputComponentObserver
 {
-public:
-
-	void onInputComponentUpdated(InputData data);
-	SDL_Window * window = nullptr;
-	SDL_Surface* screenSurface = nullptr;
-	SDL_Renderer* renderer = nullptr;
-
-	SDL_Surface* nene = nullptr;
+private:
+	SDL_Surface * nene = nullptr;
 	NeneComponent* neneTex = nullptr;
 	InputComponent* input = nullptr;
 	SoundsComponent* sounds = nullptr;
@@ -34,6 +23,20 @@ public:
 	BeatmapViewerComponent* programOutput = nullptr;
 	BeatmapViewerComponent* patternOutput = nullptr;
 	ProgramEditor* programEditor = nullptr;
+
+	bool startup();
+	void Load();
+	void Update();
+	void Render();
+	void cleanup();
+
+public:
+	Tape tape;
+
+	void onInputComponentUpdated(InputData data);
+	SDL_Window * window = nullptr;
+	SDL_Surface* screenSurface = nullptr;
+	SDL_Renderer* renderer = nullptr;
 
 	//Event handler
 	SDL_Event e;
@@ -47,19 +50,8 @@ public:
 	int frametime = 0;
 
 	App();
-
-	bool startup();
-
-	void Load();
-
-	void Update();
-
-	void Render();
-
-	void cleanup();
-
+	~App();
 	void run();
 
-	~App();
 };
 

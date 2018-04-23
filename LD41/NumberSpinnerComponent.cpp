@@ -2,6 +2,15 @@
 #include "App.h"
 
 
+void NumberSpinnerComponent::updateText()
+{
+	SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, "000", color);
+	tex = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
+	//Don't forget too free your surface and texture
+	SDL_FreeSurface(surfaceMessage);
+
+}
+
 void NumberSpinnerComponent::onUpdate(App * game)
 {
 	SDL_RenderCopy(game->renderer, arrowUp, NULL, &arrowUpRect);
@@ -21,9 +30,11 @@ void NumberSpinnerComponent::onCleanup()
 
 NumberSpinnerComponent::NumberSpinnerComponent(SDL_Renderer* renderer, SDL_Texture* arrowUp, SDL_Texture* arrowDown, TTF_Font * font, SDL_Color color, int posx, int posy)
 {
+	this->renderer = renderer;
 	this->arrowUp = arrowUp;
 	this->arrowDown = arrowDown;
 	this->color = color;
+	this->font = font;
 
 	arrowUpRect.h = 24;
 	arrowUpRect.w = 24;
@@ -45,18 +56,21 @@ NumberSpinnerComponent::NumberSpinnerComponent(SDL_Renderer* renderer, SDL_Textu
 	msg_rect.w = 80;
 	msg_rect.h = 28;
 
-	this->color = color;
-
-	SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, "000", color);
-
-	tex = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
-
-	//Don't forget too free your surface and texture
-	SDL_FreeSurface(surfaceMessage);
-
+	updateText();
 }
 
 NumberSpinnerComponent::~NumberSpinnerComponent()
 {
 	cleanup();
+}
+
+int NumberSpinnerComponent::getValue()
+{
+	return currentValue;
+}
+
+void NumberSpinnerComponent::setValue(int value)
+{
+	currentValue = value;
+	updateText();
 }

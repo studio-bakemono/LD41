@@ -126,24 +126,19 @@
     <ClCompile Include="BitButtonComponent.cpp" />
     <ClCompile Include="BytePanelComponent.cpp" />
     <ClCompile Include="Component.cpp" />
-    <ClCompile Include="Entity.cpp" />
-    <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="GraphicsComponent.cpp" />
-    <ClCompile Include="GUI.cpp" />
     <ClCompile Include="InputComponent.cpp" />
-    <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="NeneComponent.cpp" />
     <ClCompile Include="NumberSpinnerComponent.cpp" />
     <ClCompile Include="OperatorButtonComponent.cpp" />
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="BeatmapViewerComponent.cpp" />
     <ClCompile Include="ProgramEditor.cpp" />
     <ClCompile Include="ProgramEditorRow.cpp" />
     <ClCompile Include="Sounds.cpp" />
     <ClCompile Include="SoundsComponent.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="Tape.cpp" />
     <ClCompile Include="Turing.cpp" />
     <ClCompile Include="TuringComponent.cpp" />
   </ItemGroup>
@@ -152,30 +147,20 @@
     <ClInclude Include="BitButtonComponent.h" />
     <ClInclude Include="BytePanelComponent.h" />
     <ClInclude Include="Component.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="EntityManager.h" />
-    <ClInclude Include="Error.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="GraphicsComponent.h" />
-    <ClInclude Include="GUI.h" />
     <ClInclude Include="InputComponent.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Map.h" />
     <ClInclude Include="NeneComponent.h" />
     <ClInclude Include="NumberSpinnerComponent.h" />
     <ClInclude Include="OperatorButtonComponent.h" />
-    <ClInclude Include="Player.h" />
     <ClInclude Include="BeatmapViewerComponent.h" />
     <ClInclude Include="ProgramEditor.h" />
     <ClInclude Include="ProgramEditorRow.h" />
     <ClInclude Include="Sounds.h" />
     <ClInclude Include="SoundsComponent.h" />
-    <ClInclude Include="test.h" />
-    <ClInclude Include="textureHelper.h" />
-    <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="Tape.h" />
     <ClInclude Include="Turing.h" />
     <ClInclude Include="TuringComponent.h" />
-    <ClInclude Include="vector2.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -1,5 +1,6 @@
 #include "App.h"
 #include "Graphics.h"
+#include "ProgramEditorRow.h"
 
 App::App()
 {
@@ -57,6 +58,9 @@ void App::Load() {
 
 	input = new InputComponent();
 	input->addObserver(this);
+	for (int i = 0; i < programEditor->rows.size(); i++) {
+		input->addObserver(programEditor->rows[i]);
+	}
 }
 
 void App::Update()
