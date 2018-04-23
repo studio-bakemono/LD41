@@ -1,10 +1,17 @@
 #include "NumberSpinnerComponent.h"
 #include "App.h"
 
+#include <sstream>
+#include <iomanip>
+
 
 void NumberSpinnerComponent::updateText()
 {
-	SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, "000", color);
+	std::stringstream ss;
+	ss << std::setw(3) << std::setfill('0') << currentValue;
+	std::string s = ss.str();
+
+	SDL_Surface* surfaceMessage = TTF_RenderText_Solid(font, s.c_str(), color);
 	tex = SDL_CreateTextureFromSurface(renderer, surfaceMessage);
 	//Don't forget too free your surface and texture
 	SDL_FreeSurface(surfaceMessage);
@@ -73,4 +80,28 @@ void NumberSpinnerComponent::setValue(int value)
 {
 	currentValue = value;
 	updateText();
+}
+
+void NumberSpinnerComponent::onInputComponentUpdated(InputData data)
+{
+	if (data.mouseClicked)
+	{
+		if (in_rect(data.mouseX, data.mouseY, &arrowUpRect)) {
+			currentValue++;
+			if (currentValue > 255) 
+			{
+				currentValue = 0;
+			}
+			updateText();
+		}
+		if (in_rect(data.mouseX, data.mouseY, &arrowDownRect)) {
+			currentValue--;
+			if (currentValue < 0) 
+			{
+				currentValue = 255;
+			}
+			updateText();
+		}
+	}
+
 }

@@ -1,9 +1,11 @@
 #pragma once
 #include "GraphicsComponent.h"
 #include "SDL_ttf.h"
+#include "InputComponent.h"
 
 class NumberSpinnerComponent :
-	public GraphicsComponent
+	public GraphicsComponent,
+	public InputComponentObserver
 {
 private:
 	SDL_Texture * arrowUp;
@@ -27,4 +29,7 @@ public:
 	~NumberSpinnerComponent();
 	int getValue();
 	void setValue(int value);
+
+	// Inherited via InputComponentObserver
+	virtual void onInputComponentUpdated(InputData data) override;
 };
