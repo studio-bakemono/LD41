@@ -13,6 +13,11 @@ bool App::startup()
 		//	LogError();
 		return false;
 	}
+	if (TTF_Init() == -1)
+	{
+		printf("SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError());
+		return false;
+	}
 
 	//Initialize SDL_mixer
 	if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
@@ -41,6 +46,7 @@ void App::Load() {
 	//LOAD RESOURCES HERE
 	neneTex = new NeneComponent(renderer);
 
+	programEditor = new ProgramEditor(renderer);
 	sounds = new SoundsComponent();
 	bytePanel = new BytePanelComponent(renderer, 640, 0, 16, 200);
 	programOutput = new BeatmapViewerComponent(renderer, 16, 100, 16);
@@ -84,8 +90,10 @@ void App::Render()
 	SDL_Rect programEditorRect = { 368, 90, 420, 482 };
 	SDL_RenderFillRect(renderer, &programEditorRect);
 
+	programEditor->update(this);
 	programOutput->update(this);
 	patternOutput->update(this);
+
 	//STOP RENDERING SUTFF HERE	
 	SDL_RenderPresent(renderer);
 	SDL_Delay(1000 / 60);
@@ -121,6 +129,8 @@ void App::cleanup()
 	delete input;
 
 	SDL_Quit();
+	TTF_Quit();
+	IMG_Quit();
 }
 
 App::~App()
