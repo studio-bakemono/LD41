@@ -60,4 +60,6 @@ void ProgramEditorRow::onTapeUpdated(std::vector<unsigned char> tape)
 void ProgramEditorRow::onInputComponentUpdated(InputData data)
 {
 	opButton->onInputComponentUpdated(data);
+	value1->onInputComponentUpdated(data);
+	value2->onInputComponentUpdated(data);
 }
