@@ -99,8 +99,17 @@
     <ClCompile Include="BeatmapViewerComponent.cpp">
       <Filter>Source Files\components\graphics</Filter>
     </ClCompile>
+    <ClCompile Include="NumberSpinnerComponent.cpp">
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
     <ClCompile Include="OperatorButtonComponent.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramEditorRow.cpp">
+      <Filter>Source Files\components\graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="ProgramEditor.cpp">
+      <Filter>Source Files\components\graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +186,15 @@
       <Filter>Header Files\components\graphics</Filter>
     </ClInclude>
     <ClInclude Include="OperatorButtonComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberSpinnerComponent.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramEditorRow.h">
+      <Filter>Header Files\components\graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="ProgramEditor.h">
       <Filter>Header Files\components\graphics</Filter>
     </ClInclude>
   </ItemGroup>

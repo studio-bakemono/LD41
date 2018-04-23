@@ -1,4 +1,5 @@
 #pragma once
+#include <SDL_ttf.h>
 
 #include "EntityManager.h"
 #include "Entity.h"
@@ -9,6 +10,7 @@
 #include "TuringComponent.h"
 #include "BytePanelComponent.h"
 #include "BeatmapViewerComponent.h"
+#include "ProgramEditor.h"
 
 //#include "TextureManager.h"
 
@@ -31,6 +33,7 @@ public:
 	BytePanelComponent* bytePanel = nullptr;
 	BeatmapViewerComponent* programOutput = nullptr;
 	BeatmapViewerComponent* patternOutput = nullptr;
+	ProgramEditor* programEditor = nullptr;
 
 	//Event handler
 	SDL_Event e;

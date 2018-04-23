@@ -22,5 +22,5 @@ void NeneComponent::onUpdate(App* game)
 
 void NeneComponent::onCleanup()
 {
-	
+	SDL_DestroyTexture(tex);
 }
