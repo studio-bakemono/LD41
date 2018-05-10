@@ -20,7 +20,7 @@ ProgramEditor::ProgramEditor(SDL_Renderer* renderer)
 	int posy = 90;
 	arrowUp = Graphics::LoadTexture(renderer, "arrow_up.png");
 	arrowDown = Graphics::LoadTexture(renderer, "arrow_down.png");
-	font = TTF_OpenFont("../resources/PressStart2P.ttf", 24);
+	font = TTF_OpenFont("resources/PressStart2P.ttf", 24);
 
 	for (int i = 0; i < 12; i++)
 	{

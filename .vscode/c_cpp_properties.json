@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "browse": {
+                "path": [
+                    "${workspaceFolder}",
+                    "${workspaceFolder}/external/SDL2_image/include",
+                    "${workspaceFolder}/external/SDL2_mixer/include",
+                    "${workspaceFolder}/external/SDL/include",
+                    "${workspaceFolder}/external/SDL2_ttf/include"
+
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "${workspaceFolder}",
+                "${workspaceFolder}/external/SDL2_image/include",
+                "${workspaceFolder}/external/SDL2_mixer/include",
+                "${workspaceFolder}/external/SDL/include",
+                "${workspaceFolder}/external/SDL2_ttf/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "msvc-x64"
+        }
+    ],
+    "version": 4
+}

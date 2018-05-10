@@ -39,3 +39,4 @@ build
 x64
 .vs
 packages
+external
