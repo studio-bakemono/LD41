@@ -1,0 +1,25 @@
+{
+    "version": "0.1.0",
+    "command": "cmd",
+    "isShellCommand": true,
+    "args": ["/c"],
+    "showOutput":"silent",
+    "echoCommand": true,
+    "tasks":
+    [
+        {
+            "taskName": "build",
+            "suppressTaskName": true,
+            "isBuildCommand": true,
+            "isShellCommand": true,
+            "args": ["scripts\\shell & scripts\\build"],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "taskName": "clean",
+            "suppressTaskName": true,
+            "isShellCommand": true,
+            "args": ["scripts\\clean"]
+        }
+    ]
+}
