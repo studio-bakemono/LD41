@@ -1,6 +1,6 @@
 @echo off
 
- set buildDir=%~dp0..\build
+set buildDir=%~dp0..\build
 
 if not exist %buildDir% mkdir %buildDir%
 
@@ -47,9 +47,9 @@ if not exist %objDir% mkdir %objDir%
 cl %compileFlags% %files% %libs% %linkFlags%
 
 :: Copy dependencies
-xcopy /y ..\external\SDL\lib\x64\SDL2.dll .
-xcopy /y ..\external\SDL2_mixer\lib\x64\*.dll .
-xcopy /y ..\external\SDL2_ttf\lib\x64\*.dll .
-xcopy /y ..\external\SDL2_image\lib\x64\*.dll .
+xcopy /y ..\external\MSVC\SDL2\lib\x64\SDL2.dll .
+xcopy /y ..\external\MSVC\SDL2_mixer\lib\x64\*.dll .
+xcopy /y ..\external\MSVC\SDL2_ttf\lib\x64\*.dll .
+xcopy /y ..\external\MSVC\SDL2_image\lib\x64\*.dll .
 echo D | xcopy /y ..\resources .\resources
 popd

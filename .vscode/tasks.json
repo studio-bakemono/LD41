@@ -8,11 +8,18 @@
     "tasks":
     [
         {
-            "taskName": "build",
+            "taskName": "build with GCC",
             "suppressTaskName": true,
-            "isBuildCommand": true,
             "isShellCommand": true,
-            "args": ["scripts\\shell & scripts\\build"],
+            "isBuildCommand": true,
+            "args": ["scripts\\build_gcc"],
+            "problemMatcher": "$gcc"
+        },
+        {
+            "taskName": "build with MSVC",
+            "suppressTaskName": true,
+            "isShellCommand": true,
+            "args": ["scripts\\shell & scripts\\build_msvc"],
             "problemMatcher": "$msCompile"
         },
         {
